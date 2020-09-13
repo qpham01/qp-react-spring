@@ -14,3 +14,21 @@ Unzip project into repo folder cand import project into Eclipse
 
 Fix unbound classpath container issue https://sites.miis.edu/dreadkingrathalos/2017/06/05/unbound-classpath-container-jre-system-library-resolved/
 
+Configure logging and port in the src/main/resources/application.resources file
+logging.level.root=INFO
+server.port=8081
+spring.jpa.show-sql=true
+
+Install MariaDB https://downloads.mariadb.org/
+
+Add Hibernate JPA and H2 in-memory database dependencies to pom.xml
+
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-data-jpa</artifactId>
+    </dependency>
+    <dependency>
+        <groupId>com.h2database</groupId>
+        <artifactId>h2</artifactId>
+        <scope>runtime</scope>
+    </dependency>
