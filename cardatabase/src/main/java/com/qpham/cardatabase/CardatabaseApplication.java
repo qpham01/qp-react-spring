@@ -12,6 +12,8 @@ import com.qpham.cardatabase.domain.Car;
 import com.qpham.cardatabase.domain.CarRepository;
 import com.qpham.cardatabase.domain.Owner;
 import com.qpham.cardatabase.domain.OwnerRepository;
+import com.qpham.cardatabase.domain.User;
+import com.qpham.cardatabase.domain.UserRepository;
 
 @SpringBootApplication
 public class CardatabaseApplication {
@@ -23,6 +25,9 @@ public class CardatabaseApplication {
 
     @Autowired
     private OwnerRepository orepository;
+    
+    @Autowired 
+    private UserRepository urepository;
 
     public static void main(String[] args) {
         SpringApplication.run(CardatabaseApplication.class, args);
@@ -45,6 +50,13 @@ public class CardatabaseApplication {
             repository.save(car);
             car = new Car("Toyota", "Prius", "Silver", "KKO-0212", 2018, 39000);
             repository.save(car);
+            
+            urepository.save(new User("user",
+           "$2a$04$1.YhMIgNX/8TkCKGFUONWO1waedKhQ5KrnB30fl0Q01QKqmzLf.Zi",
+            "USER"));
+            urepository.save(new User("admin",
+            "$2a$04$KNLUwOWHVQZVpXyMBNc7JOzbLiBjb9Tk9bP7KNcPI12ICuvzXQQKG", 
+            "ADMIN"));
         };
     }
 }

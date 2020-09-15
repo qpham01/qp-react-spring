@@ -33,6 +33,11 @@ public class Car {
         this.price = price;
     }
 
+    public long getId()
+    {
+        return id;
+    }
+    
     public Set<Owner> getOwners() {
         return owners;
     }

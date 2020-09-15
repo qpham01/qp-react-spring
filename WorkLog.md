@@ -32,3 +32,6 @@ Add Hibernate JPA and H2 in-memory database dependencies to pom.xml
         <artifactId>h2</artifactId>
         <scope>runtime</scope>
     </dependency>
+
+Spring Security
+https://spring.io/projects/spring-security
